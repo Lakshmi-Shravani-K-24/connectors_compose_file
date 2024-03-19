@@ -1,0 +1,28 @@
+version: '3'
+services:
+  app:
+    build: C:\Users\sahil\OneDrive\Desktop\s_internship\Connectors\Dockerfile
+    ports:
+      - "3000:3000"
+      - "3003:3003"
+    environment:
+      MONGODB_URL: ${MONGODB_URL}
+    depends_on:
+      - mongo
+    network:
+      -connectors-network
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    network:
+      -connectors-network
+  estimate:
+    image: C:\Users\sahil\OneDrive\Desktop\s_internship\EstimatedServerOfConnectors\Dockerfile
+    ports:
+      - "3001:3001"
+    network:
+      -connectors-network
+network:
+  connectors-network:
+    driver:bridge
