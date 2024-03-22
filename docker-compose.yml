@@ -1,28 +1,36 @@
 version: '3'
 services:
   app:
-    build: C:\Users\sahil\OneDrive\Desktop\s_internship\Connectors\Dockerfile
+    build: https://github.com/Lakshmi-Shravani-K-24/Connectors.git
     ports:
       - "3000:3000"
       - "3003:3003"
     environment:
-      MONGODB_URL: ${MONGODB_URL}
+      MONGODB_URL: mongodb://mongo:27017/ChargeStationDB
     depends_on:
       - mongo
-    network:
-      -connectors-network
+    networks:
+      - connectors-network
+
   mongo:
     image: mongo:latest
     ports:
-      - "27017:27017"
-    network:
-      -connectors-network
+      - "49152:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - connectors-network
+
   estimate:
-    image: C:\Users\sahil\OneDrive\Desktop\s_internship\EstimatedServerOfConnectors\Dockerfile
+    build: https://github.com/Lakshmi-Shravani-K-24/EstimatedServerOfConnectors.git
     ports:
       - "3001:3001"
-    network:
-      -connectors-network
-network:
+    networks:
+      - connectors-network
+
+networks:
   connectors-network:
-    driver:bridge
+    driver: bridge
+
+volumes:
+  mongo-data:
