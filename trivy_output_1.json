@@ -1,30 +1,30 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2024-03-22T11:46:01.409739059Z",
-  "ArtifactName": "connnectors_compose-app",
+  "CreatedAt": "2024-03-26T07:10:13.17807784Z",
+  "ArtifactName": "connnectors_compose-estimate",
   "ArtifactType": "container_image",
   "Metadata": {
     "OS": {
       "Family": "alpine",
       "Name": "3.19.1"
     },
-    "ImageID": "sha256:38e2e9edbd6e21947defa4ca1dc03628e1c7f7c0245856eb2af3bde1233e1c3f",
+    "ImageID": "sha256:f5f620c7db5439ad4a12ab661ef48af73dc12743ddefee9f153d1b4fc47f93eb",
     "DiffIDs": [
       "sha256:d4fc045c9e3a848011de66f34b81f052d4f2c15a17bb196d637e526349601820",
       "sha256:d5d73638bf280ea0ffdd615f6335b1c53f847a4c6e15bb4b383cbfd141615b1d",
       "sha256:884adc00e5c11dc57fd299274f79f0db597fe7628c6ec439153b2dcc21b23894",
       "sha256:e79172ab9ca51373baa9ef29f1c0fac432f7e7c51217c484e97d967d27710227",
       "sha256:021808f2ff2b51ae9f3e2e3b2cc76fec86fde2b6317a6c3c6f119ccfaa36008a",
-      "sha256:33f07b73f2fd393df09c462798d9c29509a2713940c8752a6d40de04bb05730b",
-      "sha256:ec1fcfeabbc52b0b33c1c20b59677e9bdf9bdd77df5667f17484ba0dab962b9f",
-      "sha256:988f11f3fc2be3455b63ab8004bf9b2ece0ea6767e25ba8907384d91734ed9d3"
+      "sha256:229b35b5800a5e2fea81f38414d083337129bcf8982da087e618224df47ad99f",
+      "sha256:bd980093217988d28771aa4c981660e32d7a1e08359ce1c66361754f702a5dbf",
+      "sha256:22310ab635cd19344df8c85812d4afb14516e77830249c9e048cf2460dbe9e7e"
     ],
     "RepoTags": [
-      "connnectors_compose-app:latest"
+      "connnectors_compose-estimate:latest"
     ],
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2024-03-22T10:22:23.902066666Z",
+      "created": "2024-03-22T10:21:18.496163228Z",
       "history": [
         {
           "created": "2024-01-27T00:30:48Z",
@@ -78,29 +78,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2024-03-22T10:22:23Z",
-          "created_by": "RUN /bin/sh -c npm install # buildkit",
+          "created": "2024-03-22T10:21:18Z",
+          "created_by": "RUN /bin/sh -c npm install --production # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2024-03-22T10:22:23Z",
+          "created": "2024-03-22T10:21:18Z",
           "created_by": "COPY . . # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2024-03-22T10:22:23Z",
-          "created_by": "EXPOSE map[3000/tcp:{}]",
+          "created": "2024-03-22T10:21:18Z",
+          "created_by": "EXPOSE map[3001/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2024-03-22T10:22:23Z",
-          "created_by": "EXPOSE map[3003/tcp:{}]",
-          "comment": "buildkit.dockerfile.v0",
-          "empty_layer": true
-        },
-        {
-          "created": "2024-03-22T10:22:23Z",
+          "created": "2024-03-22T10:21:18Z",
           "created_by": "CMD [\"node\" \"index.js\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -115,9 +109,9 @@
           "sha256:884adc00e5c11dc57fd299274f79f0db597fe7628c6ec439153b2dcc21b23894",
           "sha256:e79172ab9ca51373baa9ef29f1c0fac432f7e7c51217c484e97d967d27710227",
           "sha256:021808f2ff2b51ae9f3e2e3b2cc76fec86fde2b6317a6c3c6f119ccfaa36008a",
-          "sha256:33f07b73f2fd393df09c462798d9c29509a2713940c8752a6d40de04bb05730b",
-          "sha256:ec1fcfeabbc52b0b33c1c20b59677e9bdf9bdd77df5667f17484ba0dab962b9f",
-          "sha256:988f11f3fc2be3455b63ab8004bf9b2ece0ea6767e25ba8907384d91734ed9d3"
+          "sha256:229b35b5800a5e2fea81f38414d083337129bcf8982da087e618224df47ad99f",
+          "sha256:bd980093217988d28771aa4c981660e32d7a1e08359ce1c66361754f702a5dbf",
+          "sha256:22310ab635cd19344df8c85812d4afb14516e77830249c9e048cf2460dbe9e7e"
         ]
       },
       "config": {
@@ -135,7 +129,7 @@
         ],
         "Labels": {
           "com.docker.compose.project": "connnectors_compose",
-          "com.docker.compose.service": "app",
+          "com.docker.compose.service": "estimate",
           "com.docker.compose.version": "2.24.5"
         },
         "WorkingDir": "/usr/src/app",
@@ -145,7 +139,7 @@
   },
   "Results": [
     {
-      "Target": "connnectors_compose-app (alpine 3.19.1)",
+      "Target": "connnectors_compose-estimate (alpine 3.19.1)",
       "Class": "os-pkgs",
       "Type": "alpine"
     },
@@ -154,6 +148,56 @@
       "Class": "lang-pkgs",
       "Type": "node-pkg",
       "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2024-29041",
+          "PkgID": "express@4.18.3",
+          "PkgName": "express",
+          "PkgPath": "usr/src/app/node_modules/express/package.json",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/express@4.18.3"
+          },
+          "InstalledVersion": "4.18.3",
+          "FixedVersion": "4.19.2, 5.0.0-beta.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bd980093217988d28771aa4c981660e32d7a1e08359ce1c66361754f702a5dbf"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-29041",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory npm",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
+          },
+          "Title": "Express.js Open Redirect in malformed URLs",
+          "Description": "Express.js minimalist web framework for node. Versions of Express.js prior to 4.19.0 and all pre-release alpha and beta versions of 5.0 are affected by an open redirect vulnerability using malformed URLs. When a user of Express performs a redirect using a user-provided URL Express performs an encode [using `encodeurl`](https://github.com/pillarjs/encodeurl) on the contents before passing it to the `location` header. This can cause malformed URLs to be evaluated in unexpected ways by common redirect allow list implementations in Express applications, leading to an Open Redirect via bypass of a properly implemented allow list. The main method impacted is `res.location()` but this is also called from within `res.redirect()`. The vulnerability is fixed in 4.19.2 and 5.0.0-beta.3.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-1286",
+            "CWE-601"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "V3Score": 6.1
+            }
+          },
+          "References": [
+            "https://expressjs.com/en/4x/api.html#res.location",
+            "https://github.com/expressjs/express",
+            "https://github.com/expressjs/express/commit/0867302ddbde0e9463d0564fea5861feb708c2dd",
+            "https://github.com/expressjs/express/commit/0b746953c4bd8e377123527db11f9cd866e39f94",
+            "https://github.com/expressjs/express/pull/5539",
+            "https://github.com/expressjs/express/security/advisories/GHSA-rv95-896h-c2vc",
+            "https://github.com/koajs/koa/issues/1800",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-29041"
+          ],
+          "PublishedDate": "2024-03-25T21:15:46.847Z",
+          "LastModifiedDate": "2024-03-25T21:15:46.847Z"
+        },
         {
           "VulnerabilityID": "CVE-2023-42282",
           "PkgID": "ip@2.0.0",
